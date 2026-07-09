@@ -1,1 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-900 text-parchment-200 font-body antialiased;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.08), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(212, 168, 87, 0.10), transparent 45%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, .font-display {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 2px solid #D4A857;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .scrollbar-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(212,168,87,0.35); border-radius: 999px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+
+  .glass {
+    background: rgba(23, 27, 46, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .text-balance { text-wrap: balance; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
