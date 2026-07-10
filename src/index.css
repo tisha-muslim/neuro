@@ -13,7 +13,7 @@
       radial-gradient(circle at 85% 10%, rgba(212, 168, 87, 0.10), transparent 45%);
     background-attachment: fixed;
   }
-  h1, h2, h3, .font-display {
+  h1, h2, h3 {
     @apply font-display;
   }
   :focus-visible {
